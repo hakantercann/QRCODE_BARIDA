@@ -1,0 +1,113 @@
+﻿<UserControl x:Class="QRCODE_BARIDA.UserControls.SettingsMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QRCODE_BARIDA.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded" IsEnabled="False">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="65"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Border Grid.Column="1"
+                Grid.Row="0"
+                CornerRadius="10"
+                Background="AliceBlue">
+            <StackPanel Orientation="Vertical" 
+                        Margin="0,25,0,25">
+                <CheckBox x:Name="checkWebCam" 
+                          Content="WebCam"
+                          Checked="checkWebCam_Checked"
+                          Margin="0,10,0, 10"
+                          HorizontalAlignment="Center"
+                          />
+                <StackPanel Orientation="Horizontal"
+                            Margin="0,10,0,10"
+                            VerticalAlignment="Center"
+                            >
+                    <Label Content="Device: "
+                           />
+                    <ComboBox x:Name="webcamDevices"
+                          Margin="0,10,0, 10"
+                          Width="200"
+                          />
+                </StackPanel>
+
+            </StackPanel>
+            
+            
+        </Border>
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                CornerRadius="10"
+                Background="AliceBlue">
+            <StackPanel Orientation="Vertical" 
+                        Margin="0,25,0,25">
+                <CheckBox x:Name="checkIpCam" 
+                          Content="IpCam"
+                          Checked="checkIpCam_Checked"
+                          Margin="0,10,0, 10"
+                          HorizontalAlignment="Center"
+                          />
+                <StackPanel Orientation="Horizontal"    VerticalAlignment="Center">
+                    <Label Content="Ip Address:"/>
+                    <TextBox x:Name="ipAddressText"
+                             Width="200"
+                             Margin="15,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"    VerticalAlignment="Center"
+                            Margin="0,10,0,10">
+                    <Label Content="Port Number:"/>
+                    <TextBox x:Name="portText"
+                             Width="200"/>
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+        <Border Grid.Column="2"
+                    Grid.Row="0"
+                    CornerRadius="10"
+                    Background="AliceBlue">
+                <StackPanel Orientation="Vertical" 
+                        Margin="0,25,0,25">
+                <CheckBox x:Name="checkSeriPort" 
+                          Content="Barcode Scanner"
+                          Checked="checkSeriPort_Checked"
+                          Margin="0,10,0, 10"
+                          HorizontalAlignment="Center"
+                          />
+                <StackPanel Orientation="Horizontal"    VerticalAlignment="Center"
+                            Margin="0,10,0,10">
+                    <Label Content="Com Port:"/>
+                    <ComboBox x:Name="comPort"
+                             Width="200"
+                             Margin="24,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"    VerticalAlignment="Center">
+                    <Label Content="Baud Rate:"/>
+                    <ComboBox x:Name="baudRate"
+                             Width="200"
+                              Margin="18, 0, 0, 0"/>
+                </StackPanel>
+                <TextBlock x:Name="xxx" Width="200" Margin="0,20,0,0" KeyUp="xxx_KeyUp"></TextBlock>
+
+            </StackPanel>
+            </Border>
+        <Border Grid.Column="1"
+                Grid.Row="1"
+                CornerRadius="10"
+                >
+            <Image x:Name="previewFrame"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="1" Background="AliceBlue" ></Border>
+        <Button Grid.Column="2" Content="Button" HorizontalAlignment="Left" Margin="150,140,0,0" Grid.Row="1" VerticalAlignment="Top" Click="Button_Click" FontFamily="Reem Kufi" FontSize="20"/>
+    </Grid>
+</UserControl>
